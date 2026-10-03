@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+    <title>Type // Shift</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- GAME HEADER -->
+    <header class="game-header">
+        <div class="logo">
+            TYPE <span>//</span> SHIFT
+        </div>
+
+        <div class="level-info">
+            LEVEL <strong id="level">01</strong>
+        </div>
+    </header>
+
+
+    <!-- GAME AREA -->
+    <main id="game">
+
+        <!-- CITY BACKGROUND -->
+        <div class="city">
+            <div class="building building-1"></div>
+            <div class="building building-2"></div>
+            <div class="building building-3"></div>
+            <div class="building building-4"></div>
+        </div>
+
+        <!-- ROAD -->
+        <div class="road">
+
+            <div class="lane-line line-1"></div>
+            <div class="lane-line line-2"></div>
+
+            <!-- PLAYER CAR -->
+            <div id="playerCar" class="car">
+                <div class="car-window"></div>
+                <div class="car-light left"></div>
+                <div class="car-light right"></div>
+                <div class="wheel wheel-left"></div>
+                <div class="wheel wheel-right"></div>
+            </div>
+
+        </div>
+
+
+        <!-- HUD -->
+        <section class="hud">
+
+            <div class="hud-box">
+                <small>SCORE</small>
+                <strong id="score">000000</strong>
+            </div>
+
+            <div class="hud-box">
+                <small>SPEED</small>
+                <strong><span id="speed">01</span> KM/H</strong>
+            </div>
+
+        </section>
+
+
+        <!-- TYPING CHALLENGE -->
+        <section class="typing-panel">
+
+            <div class="challenge-label">
+                SHIFT COMMAND
+            </div>
+
+            <div id="wordDisplay" class="word">
+                SHIFT
+            </div>
+
+            <input
+                type="text"
+                id="typingInput"
+                placeholder="TYPE THE WORD"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+            >
+
+            <div class="progress">
+                <div id="progressBar"></div>
+            </div>
+
+        </section>
+
+
+        <!-- MOBILE CONTROLS -->
+        <div class="controls">
+
+            <button id="leftBtn" class="control-btn">
+                ◀
+            </button>
+
+            <button id="shiftBtn" class="shift-btn">
+                SHIFT
+            </button>
+
+            <button id="rightBtn" class="control-btn">
+                ▶
+            </button>
+
+        </div>
+
+
+        <!-- START SCREEN -->
+        <div id="startScreen" class="overlay">
+
+            <div class="start-card">
+
+                <div class="small-title">
+                    WELCOME TO
+                </div>
+
+                <h1>
+                    TYPE <span>//</span> SHIFT
+                </h1>
+
+                <p>
+                    DRIVE. TYPE. SHIFT.
+                </p>
+
+                <button id="startBtn" class="start-btn">
+                    START LEVEL 01
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- GAME OVER -->
+        <div id="gameOverScreen" class="overlay hidden">
+
+            <div class="start-card">
+
+                <div class="small-title">
+                    SHIFT FAILED
+                </div>
+
+                <h2>GAME OVER</h2>
+
+                <p>
+                    SCORE: <strong id="finalScore">000000</strong>
+                </p>
+
+                <button id="restartBtn" class="start-btn">
+                    RETRY LEVEL
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+  </html>
