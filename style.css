@@ -1,1 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
 
+body {
+    background: #05060a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    background: #080a10;
+    border-bottom: 1px solid #242938;
+    position: relative;
+    z-index: 20;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span,
+.start-card h1 span {
+    color: #00e5ff;
+}
+
+.level-info {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #8d95a8;
+}
+
+.level-info strong {
+    color: #00e5ff;
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+#game {
+    height: calc(100vh - 64px);
+    position: relative;
+    overflow: hidden;
+    background: #090b12;
+}
+
+/* CITY */
+
+.city {
+    position: absolute;
+    inset: 0 0 45% 0;
+    background: linear-gradient(#080b18, #15182a);
+    overflow: hidden;
+}
+
+.building {
+    position: absolute;
+    bottom: 0;
+    width: 23%;
+    background: #101522;
+    border: 1px solid #20283a;
+}
+
+.building::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #293347 0 4px,
+            transparent 4px 16px
+        );
+    opacity: .5;
+}
+
+.building-1 {
+    height: 70%;
+    left: 0;
+}
+
+.building-2 {
+    height: 90%;
+    left: 24%;
+}
+
+.building-3 {
+    height: 65%;
+    right: 23%;
+}
+
+.building-4 {
+    height: 82%;
+    right: 0;
+}
+
+/* ROAD */
+
+.road {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 25%;
+    bottom: 0;
+    background:
+        linear-gradient(
+            90deg,
+            #181b22 0%,
+            #252832 50%,
+            #181b22
