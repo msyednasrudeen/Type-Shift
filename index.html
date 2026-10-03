@@ -1,172 +1,406 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8"><meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
 
-    <title>Type // Shift</title>
+<meta name="theme-color" content="#05060a">
 
-    <link rel="stylesheet" href="style.css">
-</head>
+<title>TYPE // SHIFT</title>
 
-<body>
+<link rel="stylesheet" href="style.css">
 
-    <!-- GAME HEADER -->
-    <header class="game-header">
-        <div class="logo">
-            TYPE <span>//</span> SHIFT
-        </div>
+</head><body><!-- ================= HEADER ================= -->
 
-        <div class="level-info">
-            LEVEL <strong id="level">01</strong>
-        </div>
-    </header>
+<header class="game-header">
+
+    <div class="logo">
+        TYPE <span>//</span> SHIFT
+    </div>
+
+    <div class="level-info">
+        LEVEL
+        <strong id="level">01</strong>
+    </div>
+
+</header>
 
 
-    <!-- GAME AREA -->
-    <main id="game">
+<!-- ================= GAME ================= -->
 
-        <!-- CITY BACKGROUND -->
+<main id="game">
+
+    <!-- ENVIRONMENT -->
+
+    <div class="environment" id="environment">
+
+        <div class="sky"></div>
+
+        <div class="moon"></div>
+
         <div class="city">
+
             <div class="building building-1"></div>
             <div class="building building-2"></div>
             <div class="building building-3"></div>
             <div class="building building-4"></div>
+            <div class="building building-5"></div>
+
         </div>
 
-        <!-- ROAD -->
         <div class="road">
+
+            <div class="road-glow"></div>
 
             <div class="lane-line line-1"></div>
             <div class="lane-line line-2"></div>
 
             <!-- PLAYER CAR -->
+
             <div id="playerCar" class="car">
+
+                <div class="car-roof"></div>
+
                 <div class="car-window"></div>
+
                 <div class="car-light left"></div>
                 <div class="car-light right"></div>
+
                 <div class="wheel wheel-left"></div>
                 <div class="wheel wheel-right"></div>
+
+                <div class="car-glow"></div>
+
             </div>
+
+            <!-- ENEMY CARS -->
+
+            <div id="enemyContainer"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= HUD ================= -->
+
+    <section class="hud">
+
+        <div class="hud-box">
+
+            <small>SCORE</small>
+
+            <strong id="score">
+                000000
+            </strong>
 
         </div>
 
 
-        <!-- HUD -->
-        <section class="hud">
+        <div class="hud-box">
 
-            <div class="hud-box">
-                <small>SCORE</small>
-                <strong id="score">000000</strong>
+            <small>SPEED</small>
+
+            <strong>
+                <span id="speed">01</span>
+                KM/H
+            </strong>
+
+        </div>
+
+
+        <div class="hud-box">
+
+            <small>LIVES</small>
+
+            <strong id="lives">
+                ♥ ♥ ♥
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LEVEL INFO ================= -->
+
+    <div class="level-banner" id="levelBanner">
+
+        <span id="environmentName">
+            NEON CITY
+        </span>
+
+    </div>
+
+
+    <!-- ================= TYPING ================= -->
+
+    <section class="typing-panel">
+
+        <div class="challenge-label">
+            SHIFT COMMAND
+        </div>
+
+
+        <div id="wordDisplay" class="word">
+            SHIFT
+        </div>
+
+
+        <input
+            type="text"
+            id="typingInput"
+            placeholder="TYPE THE WORD"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="characters"
+            spellcheck="false"
+        >
+
+
+        <div class="progress">
+
+            <div id="progressBar"></div>
+
+        </div>
+
+
+        <div class="combo">
+            COMBO
+            <strong id="combo">
+                x0
+            </strong>
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTROLS ================= -->
+
+    <div class="controls">
+
+        <button
+            id="leftBtn"
+            class="control-btn"
+            aria-label="Move left">
+            ◀
+        </button>
+
+
+        <button
+            id="shiftBtn"
+            class="shift-btn">
+            SHIFT
+        </button>
+
+
+        <button
+            id="rightBtn"
+            class="control-btn"
+            aria-label="Move right">
+            ▶
+        </button>
+
+    </div>
+
+
+    <!-- ================= START SCREEN ================= -->
+
+    <div
+        id="startScreen"
+        class="overlay">
+
+        <div class="start-card">
+
+            <div class="small-title">
+                WELCOME TO
             </div>
 
-            <div class="hud-box">
-                <small>SPEED</small>
-                <strong><span id="speed">01</span> KM/H</strong>
+
+            <h1>
+                TYPE <span>//</span> SHIFT
+            </h1>
+
+
+            <h2>
+                RACING TYPING
+            </h2>
+
+
+            <p>
+                DRIVE. TYPE. SHIFT.
+            </p>
+
+
+            <div class="game-features">
+
+                <span>10+ LEVELS</span>
+                <span>NEON WORLDS</span>
+                <span>HIGH SCORE</span>
+
             </div>
 
-        </section>
 
+            <button
+                id="startBtn"
+                class="start-btn">
 
-        <!-- TYPING CHALLENGE -->
-        <section class="typing-panel">
+                START LEVEL 01
 
-            <div class="challenge-label">
-                SHIFT COMMAND
-            </div>
-
-            <div id="wordDisplay" class="word">
-                SHIFT
-            </div>
-
-            <input
-                type="text"
-                id="typingInput"
-                placeholder="TYPE THE WORD"
-                autocomplete="off"
-                autocorrect="off"
-                spellcheck="false"
-            >
-
-            <div class="progress">
-                <div id="progressBar"></div>
-            </div>
-
-        </section>
-
-
-        <!-- MOBILE CONTROLS -->
-        <div class="controls">
-
-            <button id="leftBtn" class="control-btn">
-                ◀
             </button>
 
-            <button id="shiftBtn" class="shift-btn">
-                SHIFT
-            </button>
-
-            <button id="rightBtn" class="control-btn">
-                ▶
-            </button>
-
         </div>
 
+    </div>
 
-        <!-- START SCREEN -->
-        <div id="startScreen" class="overlay">
 
-            <div class="start-card">
+    <!-- ================= LEVEL COMPLETE ================= -->
 
-                <div class="small-title">
-                    WELCOME TO
-                </div>
+    <div
+        id="levelCompleteScreen"
+        class="overlay hidden">
 
-                <h1>
-                    TYPE <span>//</span> SHIFT
-                </h1>
+        <div class="start-card">
 
-                <p>
-                    DRIVE. TYPE. SHIFT.
-                </p>
-
-                <button id="startBtn" class="start-btn">
-                    START LEVEL 01
-                </button>
-
+            <div class="small-title">
+                SHIFT COMPLETE
             </div>
 
-        </div>
+
+            <h2>
+                LEVEL <span id="completedLevel">
+                    01
+                </span>
+            </h2>
 
 
-        <!-- GAME OVER -->
-        <div id="gameOverScreen" class="overlay hidden">
+            <p>
+                SCORE:
+                <strong id="levelScore">
+                    000000
+                </strong>
+            </p>
 
-            <div class="start-card">
 
-                <div class="small-title">
-                    SHIFT FAILED
-                </div>
-
-                <h2>GAME OVER</h2>
-
-                <p>
-                    SCORE: <strong id="finalScore">000000</strong>
-                </p>
-
-                <button id="restartBtn" class="start-btn">
-                    RETRY LEVEL
-                </button>
-
+            <div class="next-level-text">
+                NEXT ENVIRONMENT
             </div>
 
+
+            <h3 id="nextEnvironment">
+                NIGHT HIGHWAY
+            </h3>
+
+
+            <button
+                id="nextLevelBtn"
+                class="start-btn">
+
+                NEXT LEVEL
+
+            </button>
+
         </div>
 
-    </main>
+    </div>
 
 
-    <script src="script.js"></script>
+    <!-- ================= GAME OVER ================= -->
+
+    <div
+        id="gameOverScreen"
+        class="overlay hidden">
+
+        <div class="start-card">
+
+            <div class="small-title">
+                SHIFT FAILED
+            </div>
+
+
+            <h2>
+                GAME OVER
+            </h2>
+
+
+            <p>
+                FINAL SCORE:
+                <strong id="finalScore">
+                    000000
+                </strong>
+            </p>
+
+
+            <p>
+                LEVEL REACHED:
+                <strong id="finalLevel">
+                    01
+                </strong>
+            </p>
+
+
+            <button
+                id="restartBtn"
+                class="start-btn">
+
+                RETRY LEVEL
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PAUSE ================= -->
+
+    <button
+        id="pauseBtn"
+        class="pause-btn">
+
+        II
+
+    </button>
+
+
+    <!-- ================= PAUSE SCREEN ================= -->
+
+    <div
+        id="pauseScreen"
+        class="overlay hidden">
+
+        <div class="start-card">
+
+            <div class="small-title">
+                GAME PAUSED
+            </div>
+
+
+            <h2>
+                PAUSED
+            </h2>
+
+
+            <button
+                id="resumeBtn"
+                class="start-btn">
+
+                RESUME
+
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="script.js"></script>
 
 </body>
-  </html>
+                </html>
